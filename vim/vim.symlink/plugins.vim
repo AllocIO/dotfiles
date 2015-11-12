@@ -9,7 +9,9 @@ Plug 'chriskempson/base16-vim'
 Plug 'kien/ctrlp.vim'
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons'
 Plug 'mileszs/ack.vim'
+Plug 'sjl/gundo.vim'
 Plug 'Raimondi/delimitMate'
+Plug 'whatyouhide/vim-lengthmatters'
 "Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-surround'
@@ -29,10 +31,11 @@ Plug 'AndrewRadev/splitjoin.vim'
 Plug 'vim-scripts/matchit.zip'
 Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 Plug 'sickill/vim-pasta' " context-aware pasting
-Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " distraction-free writing
-Plug 'junegunn/limelight.vim', { 'on': 'Limelight' } " focus tool. Good for presentating with vim
+"Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " distraction-free writing
+"Plug 'junegunn/limelight.vim', { 'on': 'Limelight' } " focus tool. Good for presentating with vim
 
 " language-specific plugins
+Plug 'ekalinin/Dockerfile.vim'
 Plug 'mattn/emmet-vim', { 'for': 'html' }
 Plug 'gregsexton/MatchTag', { 'for': 'html' }
 Plug 'othree/html5.vim', { 'for': 'html' }
