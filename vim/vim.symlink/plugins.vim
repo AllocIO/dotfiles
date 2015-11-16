@@ -22,7 +22,7 @@ Plug 'scrooloose/syntastic'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'editorconfig/editorconfig-vim'
-"Plug 'tomtom/tlib_vim'
+Plug 'tomtom/tlib_vim'
 Plug 'sotte/presenting.vim'
 Plug 'ervandew/supertab'
 "Plug 'tpope/vim-dispatch'
@@ -46,7 +46,7 @@ Plug 'elzr/vim-json', { 'for': 'json' }
 Plug 'Quramy/tsuquyomi', { 'for': 'typescript', 'do': 'npm install' }
 Plug 'Shougo/vimproc.vim', { 'do': 'make' }
 Plug 'leafgarland/typescript-vim', { 'for': 'typescript' }
-" Plug 'juvenn/mustache.vim', { 'for': 'mustache' }
+"Plug 'juvenn/mustache.vim', { 'for': 'mustache' }
 Plug 'mustache/vim-mustache-handlebars'
 Plug 'cakebaker/scss-syntax.vim', { 'for': 'scss' }
 Plug 'wavded/vim-stylus', { 'for': ['stylus', 'markdown'] }

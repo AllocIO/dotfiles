@@ -1,5 +1,8 @@
 set nocompatible              " be iMproved, required
 
+" load plugins from plug
+source ~/.vim/plugins.vim
+
 " ==========================================================
 " General Settings
 " ==========================================================
@@ -13,8 +16,9 @@ let g:mapleader=","
 syntax on " syntax highlighing
 filetype on " try to detect filetypes
 filetype plugin indent on " enable loading indent file for filetype
-set relativenumber " Display line numbers
-set background=dark " We are using dark background in vim
+set number " Display line number on current row
+set relativenumber " Display relative line numbers
+set numberwidth=5
 set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
 set wildmode=list:longest " <Tab> cycles 
@@ -50,7 +54,6 @@ set linebreak " don't wrap textin the middle of a word
 set showbreak=...
 "set formatoptions=tcroql " Setting text and comment formatting to auto
 set textwidth=120 " Lines are automatically wrapped after 120 columns
-set ttyfast
 
 """ Tab control
 set autoindent " always set autoindenting on
@@ -83,7 +86,10 @@ set incsearch " Incrementally search while typing a /regex
 set magic " Regex fix
 
 " Set theme
-colorscheme desert
+"set encoding=utf8
+let base16colorspace=256  " Access colors present in 256 colorspace
+set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
+colorscheme base16-eighties
 set background=dark
 
 " ==========================================================
@@ -120,10 +126,10 @@ map <c-h> <c-w>h
 imap <C-W> <C-O><C-W>
 
 " Copy/Paste from clipboard
-set clipboard=unnamed " Set to system clipboard
+set clipboard=unnamedplus " Set to system clipboard
 map Y y$
-map <leader>c "*y
-map <leader>p "+p
+"map <leader>c "*y
+"map <leader>p "+p
 
 " " Quit window on <leader>q
 nnoremap <leader>q :q<CR>

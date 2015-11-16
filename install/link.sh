@@ -7,6 +7,7 @@ echo "=============================="
 linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
 for file in $linkables ; do
     target="$HOME/.$( basename $file ".symlink" )"
+    echo "Processing $file for target $target"
     if [ -e $target ]; then
         echo "~${target#$HOME} already exists... Skipping."
     else
@@ -32,3 +33,22 @@ for config in $DOTFILES/config/*; do
     fi
 done
 
+echo -e "\nCreating neovim symlinks in ~/.config"
+echo "=============================="
+target="$HOME/.config/nvim"
+file="$HOME/.vim"
+if [ -e $target ]; then
+	echo "~${target#$HOME} already exists... Skipping."
+else
+	echo "Creating symlink for $file"
+	ln -s $file $target
+fi
+
+target="$HOME/.config/nvim/init.vim"
+file="$HOME/.vimrc"
+if [ -e $target ]; then
+	echo "~${target#$HOME} already exists... Skipping."
+else
+	echo "Creating symlink for $file"
+	ln -s $file $target
+fi
