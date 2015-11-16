@@ -4,9 +4,6 @@ export ZSH=$DOTFILES/zsh
 # Fix terminal colors
 export TERM=xterm-256color
 
-# OH-MY-ZSH Theme
-ZSH_THEME="robbyrussell"
-
 # Applications
 export EDITOR=nvim
 export BROWSER=firefox
@@ -35,7 +32,7 @@ setopt HIST_REDUCE_BLANKS           # Tidy up commands before comitting them to 
 
 setopt RM_STAR_WAIT                 # Wait, and ask if the user is serious when doing rm *
 
-setopt EXTENDED_GLOB                # Give meaning to lots of crazy characters.
+unsetopt EXTENDED_GLOB                # Give meaning to lots of crazy characters.
 
 # Completion Options
 setopt AUTO_LIST                    # Always automatically show a list of ambiguous completions.
