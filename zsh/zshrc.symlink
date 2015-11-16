@@ -1,0 +1,90 @@
+export DOTFILES=$HOME/.dotfiles
+export ZSH=$DOTFILES/zsh
+
+# Fix terminal colors
+export TERM=xterm-256color
+
+# OH-MY-ZSH Theme
+ZSH_THEME="robbyrussell"
+
+# Applications
+export EDITOR=nvim
+export BROWSER=firefox
+
+# History
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+
+# Display how long every task over 10 seconds take
+export REPORTTIME=5
+
+# Directory Changing options
+setopt AUTO_CD                      # Automatically cd in to directories if it's not a command name.
+setopt AUTO_PUSHD                   # Automatically push visited directories to the stack.
+setopt PUSHD_IGNORE_DUPS            # ...and don't duplicate them.
+
+# History Options
+setopt APPEND_HISTORY               # Don't overwrite history.
+setopt HIST_VERIFY                  # Verify commands that use a history expansion.
+setopt EXTENDED_HISTORY             # Remember all sorts of stuff about the history.
+setopt INC_APPEND_HISTORY           # Incrementally append commands to the history.
+setopt HIST_IGNORE_SPACE            # Ignore commands with leading spaces.
+setopt HIST_IGNORE_ALL_DUPS         # Ignore all duplicate entries in the history.
+setopt HIST_REDUCE_BLANKS           # Tidy up commands before comitting them to history.
+
+setopt RM_STAR_WAIT                 # Wait, and ask if the user is serious when doing rm *
+
+setopt EXTENDED_GLOB                # Give meaning to lots of crazy characters.
+
+# Completion Options
+setopt AUTO_LIST                    # Always automatically show a list of ambiguous completions.
+setopt COMPLETE_IN_WORD             # Complete items from the beginning to the cursor.
+
+setopt NO_BEEP                      # Never, ever, beep at me.
+
+setopt PROMPT_SUBST                 # Expand parameters within prompts.
+
+setopt LOCAL_OPTIONS                # Options set/unset inside functions, stay within the function.
+setopt INTERACTIVE_COMMENTS         # Allow me to comment lines in an interactive shell.
+
+setopt MULTIBYTE
+unsetopt FLOW_CONTROL
+
+bindkey -v
+
+if [[ -d ~/code ]]; then
+    export CODE_DIR=~/code
+fi
+
+# source all .zsh files inside of the zsh/ directory
+for config ($ZSH/**/*.zsh) source $config
+
+if [[ -a ~/.localrc ]]; then
+    source ~/.localrc
+fi
+
+# Initialize autocomplete
+zstyle :compinstall filename '/home/joakim/.zshrc'
+autoload -Uz compinit
+compinit
+
+# adding path directory for custom scripts
+export PATH=$DOTFILES/bin:$PATH
+
+# check for custom bin directory and add to path
+if [[ -d ~/bin ]]; then
+    export PATH=~/bin:$PATH
+fi
+
+# Base16 Shell
+# if [ -z "$THEME" ]; then
+    export THEME="base16-eighties"
+# fi
+if [ -z "$BACKGROUND" ]; then
+    export BACKGROUND="dark"
+fi
+
+BASE16_SHELL="$HOME/.config/base16-shell/$THEME.$BACKGROUND.sh"
+# [[ -s $BASE16_SHELL ]] && source $BASE16_SHELL
+source $BASE16_SHELL
