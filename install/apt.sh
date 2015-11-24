@@ -18,6 +18,7 @@ sudo apt-get install -y git mercurial
 # Dev tools
 sudo apt-get install -y roxterm
 sudo apt-get install -y zsh tmux
+sudo pip install tmuxp
 sudo apt-get install -y highlight
 sudo apt-get install -y nodejs npm
 sudo apt-get install -y markdown
