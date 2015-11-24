@@ -21,7 +21,7 @@ set relativenumber " Display relative line numbers
 set numberwidth=5
 set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
-set wildmode=list:longest " <Tab> cycles 
+set wildmode=list:longest " <Tab> cycles
 
 " don't bell or blink
 set noerrorbells
@@ -95,6 +95,15 @@ set background=dark
 " ==========================================================
 " Bindings
 " ==========================================================
+
+" Save file
+nmap <leader>w :update<CR>
+nmap <leader>, :update<CR>
+nnoremap <C-s> :update<CR>
+inoremap <C-s> <C-o>:update<CR>
+nnoremap <C-S-s> :wa<CR>
+inoremap <C-S-s> <C-o>:wa<CR>
+nmap <leader>W :wa<CR>
 
 " Set working directory
 nnoremap <leader>. :lcd %:p:h<CR>
