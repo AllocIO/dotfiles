@@ -104,6 +104,7 @@ cmap W! w !sudo tee % >/dev/null
 
 "Reload Vimrc
 map <silent> <leader>V :source ~/.vimrc<CR>:filetype detect<CR>:exe ":echo 'vimrc reloaded'"<CR>
+map <silent> <leader>VV :e ~/.vimrc<CR>
 
 " Close the current buffer
 noremap <C-x> :q<cr>
