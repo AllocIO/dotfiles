@@ -6,6 +6,9 @@ bind C-a send-prefix
 # for nested tmux sessions
 bind-key a send-prefix
 
+# Escape key timeout
+set -s escape-time 0
+
 # make window/pane index start with 1
 set -g base-index 1
 setw -g pane-base-index 1
@@ -43,3 +46,10 @@ unbind p
 bind p paste-buffer
 bind -t vi-copy 'v' begin-selection
 bind -t vi-copy 'y' copy-selection
+
+# List of plugins
+set -g @plugin 'tmux-plugins/tpm'
+set -g @plugin 'tmux-plugins/tmux-resurrect'
+
+# Initialize TMUX Plugin Manager (Keep this line at the bottom)
+run '~/.tmux/plugins/tpm/tpm'
