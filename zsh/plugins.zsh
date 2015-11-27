@@ -13,6 +13,7 @@ antigen bundle zsh-users/zsh-syntax-highlighting
 antigen bundle kennethreitz/autoenv
 antigen bundle history
 antigen bundle tmux
+antigen bundle vi-mode
 
 #antigen-theme amuse
 antigen-apply

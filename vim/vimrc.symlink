@@ -9,6 +9,8 @@ source ~/.vim/plugins.vim
 
 let mapleader=","
 let g:mapleader=","
+let maplocalleader=","
+let g:maplocalleader=","
 
 " ==========================================================
 " Basic Settings
@@ -22,6 +24,9 @@ set numberwidth=5
 set title " show title in console title bar
 set wildmenu " Menu completion in command mode on <Tab>
 set wildmode=list:longest " <Tab> cycles
+"set encoding=utf-8
+
+"set hidden
 
 " don't bell or blink
 set noerrorbells
@@ -190,4 +195,20 @@ map <leader>g :GundoToggle<CR>
 " ==========================================================
 
 "au FileType python setlocal formatprg=autopep8\ -
+au BufNewFile,BufRead *.py
+    \ set tabstop=4
+    \ set softtabstop=4
+    \ set shiftwidth=4
+    \ set textwidth=79
+    \ set expandtab
+    \ set autoindent
+    \ set fileformat=unix
 
+" ==========================================================
+" Javascript Settings
+" ==========================================================
+"
+au BufNewFile,BufRead *.js, *.html, *.css
+    \ set tabstop=2
+    \ set softtabstop=2
+    \ set shiftwidth=2

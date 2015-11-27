@@ -6,21 +6,21 @@ call plug#begin('~/.vim/plugged')
 Plug 'chriskempson/base16-vim'
 
 
-Plug 'kien/ctrlp.vim'
+Plug 'ctrlpvim/ctrlp.vim' " Fuzzy finder
 Plug 'scrooloose/nerdtree', { 'on': ['NERDTreeToggle', 'NERDTreeFind'] } | Plug 'Xuyuanp/nerdtree-git-plugin' | Plug 'ryanoasis/vim-devicons'
-Plug 'mileszs/ack.vim'
-Plug 'sjl/gundo.vim'
-Plug 'Raimondi/delimitMate'
-Plug 'whatyouhide/vim-lengthmatters'
+Plug 'mileszs/ack.vim' " Run ack from vim
+Plug 'sjl/gundo.vim' " Visualize your undo tree
+"Plug 'Raimondi/delimitMate' " Auto-complete for quotes, parens, brackets, etc.
+Plug 'whatyouhide/vim-lengthmatters' " Highlight overflood part of lines
 "Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-unimpaired'
-Plug 'tpope/vim-surround'
-Plug 'benmills/vimux'
-Plug 'bling/vim-airline'
-Plug 'scrooloose/syntastic'
+Plug 'tpope/vim-unimpaired' " Useful mappings starting with [ or ]
+Plug 'tpope/vim-surround' " about surroundings: parentheses, brackets, quotes, XML tags, and more
+Plug 'benmills/vimux' " Interact with tmux
+Plug 'bling/vim-airline' " Status line on steroids
+Plug 'scrooloose/syntastic' " Syntax checking
 " Plug 'benekastah/neomake'
-Plug 'tpope/vim-fugitive'
-Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-fugitive' " Git integration
+Plug 'tpope/vim-repeat' " Working . repeat for plugins mappings
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tomtom/tlib_vim'
 Plug 'sotte/presenting.vim'
@@ -33,6 +33,9 @@ Plug 'tpope/vim-sleuth' " detect indent style (tabs vs. spaces)
 Plug 'sickill/vim-pasta' " context-aware pasting
 "Plug 'junegunn/goyo.vim', { 'on': 'Goyo' } " distraction-free writing
 "Plug 'junegunn/limelight.vim', { 'on': 'Limelight' } " focus tool. Good for presentating with vim
+Plug 'freitass/todo.txt-vim'
+Plug 'svermeulen/vim-easyclip' " Yankring ++
+Plug 'tpope/vim-commentary' " Comment code
 
 " language-specific plugins
 Plug 'ekalinin/Dockerfile.vim'
@@ -54,6 +57,7 @@ Plug 'ap/vim-css-color', { 'for': 'css' }
 Plug 'hail2u/vim-css3-syntax', { 'for': 'css' }
 Plug 'itspriddle/vim-marked', { 'for': 'markdown', 'on': 'MarkedOpen' }
 Plug 'tpope/vim-markdown', { 'for': 'markdown' }
+Plug 'vim-scripts/indentpython.vim', { 'for': 'python'}
 
 call plug#end()
 filetype plugin indent on

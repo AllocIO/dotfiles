@@ -9,7 +9,7 @@ function box_name {
 function prompt_char {
     git branch >/dev/null 2>/dev/null && echo '±' && return
     hg root >/dev/null 2>/dev/null && echo '☿' && return
-    echo '○'
+    echo '◌'
 }
 
 PROMPT='
@@ -28,4 +28,6 @@ ZSH_THEME_HG_PROMPT_DIRTY="%{$fg[green]%}!"
 ZSH_THEME_HG_PROMPT_CLEAN=""
 
 local return_status="%{$fg[red]%}%(?..⤬)%{$reset_color%}"
-RPROMPT='${return_status}%{$reset_color%} [%*]'
+RPROMPT='$(vi_mode_prompt_info)${return_status}%{$reset_color%} [%*]'
+
+bindkey -v
