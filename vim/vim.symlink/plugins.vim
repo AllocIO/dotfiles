@@ -18,6 +18,7 @@ Plug 'tpope/vim-surround' " about surroundings: parentheses, brackets, quotes, X
 Plug 'benmills/vimux' " Interact with tmux
 Plug 'bling/vim-airline' " Status line on steroids
 Plug 'scrooloose/syntastic' " Syntax checking
+Plug 'nvie/vim-flake8'
 " Plug 'benekastah/neomake'
 Plug 'tpope/vim-fugitive' " Git integration
 Plug 'tpope/vim-repeat' " Working . repeat for plugins mappings
@@ -36,6 +37,7 @@ Plug 'sickill/vim-pasta' " context-aware pasting
 Plug 'freitass/todo.txt-vim'
 Plug 'svermeulen/vim-easyclip' " Yankring ++
 Plug 'tpope/vim-commentary' " Comment code
+Plug 'Valloric/YouCompleteMe'
 
 " language-specific plugins
 Plug 'ekalinin/Dockerfile.vim'
