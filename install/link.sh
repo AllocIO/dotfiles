@@ -2,7 +2,7 @@
 
 DOTFILES=$HOME/.dotfiles
 
-echo -e "\nCreating symlinks"
+echo -e "\nCreating symlinks (.symlink)"
 echo "=============================="
 linkables=$( find -H "$DOTFILES" -maxdepth 3 -name '*.symlink' )
 for file in $linkables ; do
@@ -22,7 +22,6 @@ if [ ! -d $HOME/.config ]; then
     echo "Creating ~/.config"
     mkdir -p $HOME/.config
 fi
-# configs=$( find -path "$DOTFILES/config.symlink" -maxdepth 1 )
 for config in $DOTFILES/config/*; do
     target=$HOME/.config/$( basename $config )
     if [ -e $target ]; then
@@ -32,23 +31,3 @@ for config in $DOTFILES/config/*; do
         ln -s $config $target
     fi
 done
-
-echo -e "\nCreating neovim symlinks in ~/.config"
-echo "=============================="
-target="$HOME/.config/nvim"
-file="$HOME/.vim"
-if [ -e $target ]; then
-	echo "~${target#$HOME} already exists... Skipping."
-else
-	echo "Creating symlink for $file"
-	ln -s $file $target
-fi
-
-target="$HOME/.config/nvim/init.vim"
-file="$HOME/.vimrc"
-if [ -e $target ]; then
-	echo "~${target#$HOME} already exists... Skipping."
-else
-	echo "Creating symlink for $file"
-	ln -s $file $target
-fi

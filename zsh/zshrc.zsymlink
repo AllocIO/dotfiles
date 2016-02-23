@@ -1,4 +1,5 @@
-export DOTFILES=$HOME/.dotfiles
+source ~/.profile
+
 export ZSH=$DOTFILES/zsh
 
 # Fix terminal colors
@@ -52,6 +53,11 @@ bindkey -v
 
 if [[ -d ~/code ]]; then
     export CODE_DIR=~/code
+fi
+
+# Add common aliases.
+if [ -f ~/.aliases ]; then
+    source ~/.aliases
 fi
 
 # source all .zsh files inside of the zsh/ directory

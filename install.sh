@@ -1,11 +1,13 @@
 #!/bin/bash
 
-echo "Installing dotfiles"
+echo "Installing dotfiles with zsh, neovim and X support"
 
 #echo "Initializing submodule(s)"
 git submodule update --init --recursive
 
 source install/link.sh
+source install/linkzsh.sh
+source install/linkneovim.sh
 
 if [ "$(uname)" == "Linux" ]; then
     echo "Running on Linux"
@@ -13,16 +15,14 @@ if [ "$(uname)" == "Linux" ]; then
     echo "APT all the things"
     source install/apt.sh
 
-    echo "Updating Linux settings"
-    source installLinux.sh
-
-#    echo "Installing node (from nvm)"
-    #source install/nvm.sh
+    echo "APT all the things"
+    source install/aptX.sh
+else
+	echo "Not running on Linux"
 fi
 
 echo "creating vim directories"
 mkdir -p ~/.vim-tmp
-
 
 echo "Configuring zsh as default shell"
 chsh -s $(which zsh)

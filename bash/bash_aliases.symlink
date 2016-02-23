@@ -1,4 +1,4 @@
+# bash specific aliases
+
 # reload zsh config
 alias reload!='source ~/.zshrc'
-
-alias vim="nvim"
